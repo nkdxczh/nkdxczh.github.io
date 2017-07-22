@@ -1,4 +1,4 @@
-var c = document.getElementById("c");
+var c = document.getElementById("backcanvas");
 var ctx = c.getContext("2d");
 
 //chinese characters - taken from the unicode charset
@@ -19,6 +19,8 @@ function refreshSize(){
     columns = c.width/font_size; //number of columns for the rain
     for(var x = oldc; x < columns; x++)
         drops[x] = Math.random()*c.height/font_size; 
+    ctx.fillStyle = "rgba(0, 0, 0, 1)";
+    ctx.fillRect(0, 0, c.width, c.height);
 }
 
 //drawing the characters
@@ -45,6 +47,8 @@ function draw()
         
         drops[i]++;
     }
+
+    drawTxt(welcomeTxt, c);
 }
 
 setInterval(draw, 40);
