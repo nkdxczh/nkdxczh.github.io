@@ -2,11 +2,12 @@
   <head>
     <meta charset='UTF-8'/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/terminal.css">
     <style>
 * {margin: 0; padding: 0;}
 
 div.background {
-  height: 2000px;
+  height: 1000;
   width: 100%;
   background-color: rgb(255,255,255);
 }
@@ -15,17 +16,69 @@ div.title {
   font-size:60px;
   font-color:red;
 }
+
+div.terminal {
+  z-index:2; 
+  position:absolute;
+  color:green;
+  border-radius: 5px;
+  border: 1px solid rgba(100,100,100,1);
+  font-size:20px;
+  background-color: rgba(0,0,0,1);
+  border: 5;
+  border-radius: 2;
+  width: 600px;
+  height: 400px;
+}
+
+div.container{
+  z-index:2;
+  position:absolute;
+  top: 40%;
+  left: 35%;
+  width: 600px;
+  height: 400px
+}
     </style>
+    <title>
+      Zhanhao's Website
+    </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+$( function() {
+  $( "#draggable" ).draggable();
+} );
+    </script>
   </head>
 
   <body>
-    <div class="background">
-      <canvas id='backcanvas' height='2000px' background-color='black'>
-        <div class='w3-animate-fading' style="font-size:50px; color:red">title</div>
+    <div class="background" height='1200'>
+      <canvas id='backcanvas' height='1200' style="z-index:1">
       </canvas>
+      <div id="draggable" class="ui-widget-content container">
+        <form class="four-oh-four-form">
+          <input type="text" class="404-input">
+        </form>
+
+        <div class="terminal">
+          <p class="prompt">----------BASIC INFORMATION----------</p>
+          <p class="prompt">NAME: ZHANHAO CHEN</p>
+          <p class="prompt">EMAIL: zhc416@gmail.com</p>
+          <p class="prompt">GITHUB: nkdxczh</p>
+          <p class="prompt">--------------FAST LINK--------------</p>
+          <p class="prompt" onclick="jump(0)">HOMEPAGE</p>
+          <p class="prompt" onclick="jump(1)">RESUME</p>
+          <p class="prompt">PROJECT</p>
+          <p class="prompt">---------------COMMAND---------------</p>
+          <p class="prompt output new-output"></p>
+        </div>
+      </div>
     </div>
   </body>
 
   <script src='js/title.js'></script>
   <script src='js/wordrain.js'></script>
+  <script src='js/terminal.js'></script>
+  <script src='js/click.js'></script>
 </html>
