@@ -53,8 +53,8 @@ $( function() {
   </head>
 
   <body>
-    <div class="background" height='1200'>
-      <canvas id='backcanvas' height='1200' style="z-index:1">
+    <div class="background" height='1500'>
+      <canvas id='backcanvas' height='1500' style="z-index:1">
       </canvas>
       <div id="draggable" class="ui-widget-content container">
         <form class="four-oh-four-form">
@@ -69,14 +69,17 @@ $( function() {
           <p class="prompt">----------------GUIDE----------------</p>
           <p class="prompt" onclick="jump(0)">HOMEPAGE</p>
           <p class="prompt" onclick="jump(1)">RESUME</p>
-          <p class="prompt">PROJECT</p>
+          <p class="prompt" onclick="jump(2)">PROJECTS</p>
+          <p class="prompt" onclick="jump(3)">TIME CHENNEL ATTACKS DEMO</p>
           <p class="prompt">---------------COMMAND---------------</p>
           <p class="prompt output new-output"></p>
         </div>
       </div>
     </div>
 
-    <iframe id="resume" style="position:absolute; top:25%; left:25%; width:1000px; height:1000px; display:none;" frameborder="0"></iframe>
+    <iframe id="resume" style="position:absolute; top:30%; left:12%; width:1500px; height:1200px; display:none;" frameborder="0"></iframe>
+    <div id="projects" style="position:absolute; top:38%; left:12%; width:1500px; height:1100px; display:none; background-color: rgba(255,255,255,0.5);" frameborder="0"></div>
+    <iframe id="demo" style="position:absolute; top:33%; left:27%; width:1500px; height:1000px; display:none;ba    ckground-color: rgba(255,255,255,0.5);" frameborder="0"></iframe>
   </body>
 
   <script src='js/title.js'></script>

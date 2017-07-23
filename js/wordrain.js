@@ -12,11 +12,11 @@ var font_size = 10;
 var drops = [];
 var columns = c.width/font_size; //number of columns for the rain
 
-var titles = [indexTxt,resumeTxt];
-var alphas = [0,0];
-var flags = [true,false];
-var wbs=[-0.05*c.width,0];
-var hbs=[0,0];
+var titles = [indexTxt,resumeTxt,projectsTxt,demoTxt];
+var alphas = [0,0,0,0];
+var flags = [true,false,false,false];
+var wbs=[-0.05*c.width,0,0,0];
+var hbs=[0,0,0,0];
 
 function refreshSize(){
     if(window.innerWidth == c.width && drops.length > 0)return;

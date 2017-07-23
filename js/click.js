@@ -7,4 +7,15 @@ function jump(page){
     else{
         $('#resume').hide();
     }
+    if(page == 2){
+        $('#projects').show();
+    }else{
+        $('#projects').hide();
+    }
+    if(page == 3){
+        $('#demo').show();
+        $('#demo').attr('src','attack/index.html');
+    }else{
+        $('#demo').hide();
+    }
 }
