@@ -12,9 +12,11 @@ var font_size = 10;
 var drops = [];
 var columns = c.width/font_size; //number of columns for the rain
 
-var titles = [welcomeTxt,resumeTxt];
+var titles = [indexTxt,resumeTxt];
 var alphas = [0,0];
 var flags = [true,false];
+var wbs=[-0.05*c.width,0];
+var hbs=[0,0];
 
 function refreshSize(){
     if(window.innerWidth == c.width && drops.length > 0)return;
@@ -53,7 +55,7 @@ function draw()
     }
 
     for(var i = 0; i < titles.length; i++)
-        alphas[i] = drawTxt(titles[i], c, flags[i], alphas[i]);
+        alphas[i] = drawTxt(titles[i], c, flags[i], alphas[i],wbs[i],hbs[i]);
 }
 
 function changePage(page)
