@@ -15,11 +15,11 @@ $('.four-oh-four-form').on('submit', function(e){
     var href;
 
     if (val == 'resume'){
-        changePage(1);
+        jump(1);
         resetForm(true);
     }
     else if(val == 'homepage'){
-        changePage(0);
+        jump(0);
         resetForm(true);
     }
     else {
