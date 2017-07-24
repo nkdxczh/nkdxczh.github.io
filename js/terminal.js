@@ -14,25 +14,33 @@ $('.four-oh-four-form').on('submit', function(e){
     var val = $(this).children($('.404-input')).val().toLowerCase();
     var href;
 
-    if (val === 'kittens'){
-        showKittens();
-    }else {
-        resetForm();
+    if (val == 'resume'){
+        changePage(1);
+        resetForm(true);
+    }
+    else if(val == 'homepage'){
+        changePage(0);
+        resetForm(true);
+    }
+    else {
+        resetForm(false);
     }
 });
 
-function resetForm(withKittens){
+function resetForm(found){
     var message = "Sorry that command is not recognized."
         var input = $('.404-input');
 
-    if (withKittens){
-        $('.kittens').removeClass('kittens');
-        message = "Huzzzzzah Kittehs!"
+    if (found){
+        message = "";
     }
 
     $('.new-output').removeClass('new-output');
     input.val('');
-    $('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
+    if(!found)$('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
+    else $('.terminal').append('<p class="prompt output new-output"></p>');
+
+    $('.terminal').animate({scrollTop: $('.terminal').height()}, 1000);
 
     $('.new-output').velocity(
             'scroll'
