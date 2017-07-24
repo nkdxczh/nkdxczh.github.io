@@ -28,7 +28,7 @@ div.terminal {
   border: 5;
   border-radius: 2;
   width: 700px;
-  height: 400px;
+  height: 450px;
   overflow:scroll;
 }
 
@@ -39,6 +39,9 @@ div.container{
   left: 2%;
   width: 600px;
   height: 400px
+}
+
+iframe.content{
 }
     </style>
     <title>
@@ -67,30 +70,55 @@ $( function() {
     <div class="background" height='1500'>
       <canvas id='backcanvas' height='1500' style="z-index:1">
       </canvas>
+      <button onclick="toTop($('#cosole'));" style="z-index:5; position:absolute; top:0; left:0; border:0; color:green; background-color:rgba(0,0,0,0);">Move Console to Top</button>
       <div id="draggable" class="ui-widget-content container">
         <form class="four-oh-four-form">
           <input type="text" class="404-input">
         </form>
 
-        <div class="terminal">
+        <div id='console' class="terminal" onclick="toTop(this)">
           <p class="prompt">----------BASIC INFORMATION----------</p>
           <p class="prompt">NAME: ZHANHAO CHEN</p>
-          <p class="prompt">EMAIL: zhc416@gmail.com</p>
-          <p class="prompt">GITHUB: nkdxczh</p>
+          <p class="prompt">EMAIL: <a href="mailto:zhc416@lehigh.edu">zhc416@gmail.com</a></p>
+          <p class="prompt">GITHUB: <a href="https://github.com/nkdxczh">nkdxczh</a></p>
+          <p class="prompt">LINKIN: <a href="https://www.linkedin.com/in/zhanhao-chen-744b3b131/">linkedin.com/in/nkdxczh</a></p>
           <p class="prompt">----------------GUIDE----------------</p>
-          <p class="prompt" onclick="jump(0)">HOMEPAGE</p>
-          <p class="prompt" onclick="jump(1)">RESUME</p>
-          <p class="prompt" onclick="jump(2)">PROJECTS</p>
-          <p class="prompt" onclick="jump(3)">TIME CHENNEL ATTACKS DEMO</p>
+          <p class="prompt" onclick="jump(0)" style="text-decoration:underline;">HOMEPAGE</p>
+          <p class="prompt" onclick="jump(1)" style="text-decoration:underline;">RESUME</p>
+          <p class="prompt" onclick="jump(2)" style="text-decoration:underline;">PROJECTS</p>
+          <p class="prompt" onclick="jump(3)" style="text-decoration:underline;">TIME CHENNEL ATTACKS DEMO</p>
           <p class="prompt">---------------COMMAND---------------</p>
           <p class="prompt output new-output"></p>
         </div>
       </div>
     </div>
 
-    <iframe id="resume" src="doc/resume.pdf" style="position:absolute; top:30%; left:12%; width:1500px; height:1200px; display:none;" frameborder="0"></iframe>
-    <div id="projects" style="position:absolute; top:38%; left:12%; width:1500px; height:1100px; display:none; background-color: rgba(255,255,255,0.5);" frameborder="0"></div>
-    <iframe id="demo" style="position:absolute; top:33%; left:27%; width:1500px; height:1000px; display:none;ba    ckground-color: rgba(255,255,255,0.5);" frameborder="0"></iframe>
+    <iframe id="resume" class="content" onload="iframeclick(this)" src="doc/resume.pdf" style="position:absolute; top:25%; left:15%; width:70%; height:1200px; display:none;" frameborder="0"></iframe>
+    <div id="projects" class="terminal" onclick="toTop(this)" style="font-size: 25; opacity: 0.8; z-index:1; position:absolute; top:30%; left:15%; width:70%; height:1100px; display:none; border-radius: 10px;" frameborder="0">
+      <p class="prompt">---------------DETERFOX---------------</p>
+      <p class="prompt">TIME: Oct. 2016 – Present</p>
+      <p class="prompt">LOCATION: seclab, Lehigh University</p>
+      <p class="prompt">COWORKERS: YINZHI CAO, <a href="http://songli.io">SONG LI</a></p>
+      <p class="prompt">INTRODUCTION: A deteministic browser.</p>
+      <p class="prompt">GITHUB: <a href='https://github.com/nkdxczh/Deterfox'>github.com/nkdxczh/Deterfox</a></p>
+      <p class="prompt"></p>
+      <p class="prompt">-------INDOOR NAVIGATION SYSTEM-------</p>
+      <p class="prompt">TIME: Oct. 2015 – Jun. 2016</p>
+      <p class="prompt">LOCATION: Nankai University</p>
+      <p class="prompt">COWORKERS: JIE MA, XIUXING LI, YIXIONG ZOU, XIHAO XU</p>
+      <p class="prompt">INTRODUCTION: An Andoird app.</p>
+      <p class="prompt">GITHUB: <a href='https://github.com/nkdxczh/Indoor-Position-System'>github.com/nkdxczh/Indoor-Position-System</a></p>
+      <p class="prompt"></p>
+      <p class="prompt">------Fine-grain Leaf Recognition-----</p>
+      <p class="prompt">TIME: Jun. 2014 – Mar. 2016</p>
+      <p class="prompt">LOCATION: Nankai University</p>
+      <p class="prompt">COWORKERS: SHAN XU, YIXIONG ZOU, HUALONG ZHANG, YUE LI, WEI WANG</p>
+      <p class="prompt">INTRODUCTION: An Andoird app.</p>
+      <p class="prompt">GITHUB: <a href='https://github.com/nkdxczh/Leaf-Search'>github.com/nkdxczh/Leaf-Search</a></p>
+      <p class="prompt">PAPER: <a href='http://www.atlantis-press.com/php/pub.php?publication=icmmct-16&frame=http%3A//www.atlantis-press.com/php/paper-details.php%3Ffrom%3Dauthor+index%26id%3D25849934%26querystr%3Dauthorstr%253DZ'>Feature Evaluation in Fine-gain of Leaf</a></p>
+
+    </div>
+    <iframe id="demo" class="content" onclick="toTop(this)" style="position:absolute; top:33%; left:20%; width: 60%; height:1000px; display:none;background-color: rgba(255,255,255,0.5);" frameborder="0"></iframe>
   </body>
 
   <script src='js/title.js'></script>

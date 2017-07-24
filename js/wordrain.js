@@ -8,7 +8,7 @@ chinese = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 ///converting the string into an array of single characters
 chinese = chinese.split("");
 
-var font_size = 10;
+var font_size = 15;
 //an array of drops - one per column
 var drops = [];
 var columns = c.width/font_size; //number of columns for the rain
@@ -51,7 +51,7 @@ function draw()
         //x = i*font_size, y = value of drops[i]*font_size
         ctx.fillText(text, i*font_size, drops[i]*font_size);
         
-        if(drops[i]*font_size > c.height && Math.random() > 0.9)
+        if(drops[i]*font_size > c.height && Math.random() > 0.98)
             drops[i] = 0;                                                                                       
         
         drops[i]++;
@@ -70,4 +70,4 @@ function changePage(page)
     flags[page] = true;
 }
 
-setInterval(draw, 80);
+setInterval(draw, 100);

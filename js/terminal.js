@@ -1,5 +1,7 @@
 var inputReady = true;
 var input = $('.404-input');
+var info = '<p class="prompt">----------BASIC INFORMATION----------</p><p class="prompt">NAME: ZHANHAO CHEN</p><p class="prompt">EMAIL: <a href="mailto:zhc416@lehigh.edu" style="text-decoration: none">zhc416@gmail.com</a></p><p class="prompt">GITHUB: <a href="https://github.com/nkdxczh" style="text-decoration: none">nkdxczh</a></p><p class="prompt">---------------COMMAND---------------</p>';
+var guide = '<p class="prompt">----------------GUIDE----------------</p><p class="prompt" onclick="jump(0)">HOMEPAGE</p><p class="prompt" onclick="jump(1)">RESUME</p><p class="prompt" onclick="jump(2)">PROJECTS</p><p class="prompt" onclick="jump(3)">TIME CHENNEL ATTACKS DEMO</p><p class="prompt">---------------COMMAND---------------</p>';
 input.focus();
 $('.container').on('click', function(e){
     input.focus();
@@ -16,31 +18,49 @@ $('.four-oh-four-form').on('submit', function(e){
 
     if (val == 'resume'){
         jump(1);
-        resetForm(true);
+        resetForm(1);
     }
     else if(val == 'homepage'){
         jump(0);
-        resetForm(true);
+        resetForm(1);
+    }
+    else if(val == 'projects'){
+        jump(2);
+        resetForm(1);
+    }
+    else if(val == 'demo'){
+        jump(3);
+        resetForm(1);
+    }
+    else if(val == 'information'){
+        resetForm(2);
+    }
+    else if(val == 'guide'){
+        resetForm(3);
     }
     else {
-        resetForm(false);
+        resetForm(0,val);
     }
 });
 
-function resetForm(found){
-    var message = "Sorry that command is not recognized."
+function resetForm(found,m){
+    var message = '<p class="prompt">'+m+' command not found.</p>'
         var input = $('.404-input');
 
-    if (found){
+    if (found==1){
         message = "";
     }
+    else if(found == 2)
+        message = info;
+    else if(found == 3)
+        message = guide;
 
     $('.new-output').removeClass('new-output');
     input.val('');
-    if(!found)$('.terminal').append('<p class="prompt">' + message + '</p><p class="prompt output new-output"></p>');
-    else $('.terminal').append('<p class="prompt output new-output"></p>');
+    console.log(message);
+    $('#console').append(message + '<p class="prompt output new-output"></p>');
 
-    $('.terminal').animate({scrollTop: $('.terminal').height()}, 1000);
+    $('#console').animate({scrollTop: 1000*$('.terminal').height()}, 1000);
 
     $('.new-output').velocity(
             'scroll'
@@ -86,3 +106,4 @@ function shuffle(o){
     for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
 };
+

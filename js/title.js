@@ -5,8 +5,6 @@ var demoTxt=[[0.025,0.31],[0.0333333333333,0.31],[0.0416666666667,0.31],[0.05,0.
 var words = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 words = words.split("");
 
-var font_size=10;
-
 function drawTxt(list, element, flag, alpha, l, t, w, h){
     if(!flag && alpha == 0)return 0;
     var columns = w/font_size;

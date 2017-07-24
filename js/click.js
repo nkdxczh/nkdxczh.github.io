@@ -18,3 +18,16 @@ function jump(page){
         $('#demo').hide();
     }
 }
+
+function toTop(element){
+    $(".terminal,.content").each(function() {
+        $(this).css("zIndex", 1);
+    });
+    console.log(element);
+    $(element).css("zIndex", 2);
+}
+
+function iframeclick(element){
+    console.log(element);
+    $(this).on('click',toTop(element));
+}
