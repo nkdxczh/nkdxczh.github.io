@@ -1,4 +1,5 @@
 from PIL import Image
+import sys
 from PIL import ImageDraw
 from PIL import ImageFont
 import imageio
@@ -30,7 +31,7 @@ def generate(outputFile):
 
 def generateGif(out, pics):
     images = []
-    kargs = { 'duration': 0.1}
+    kargs = { 'duration': 0.1, 'loop': sys.maxint}
     for filename in pics:
         images.append(imageio.imread(filename))
     imageio.mimsave(out, images,'GIF-FI', **kargs)

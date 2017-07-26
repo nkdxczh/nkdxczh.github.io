@@ -68,9 +68,9 @@ function changePage(page)
     }
     flags[page] = true;*/
     if(page==0)$('#title').attr('src','img/welcome.gif');
-    if(page==1)$('#title').attr('src','img/resume.gif');
-    if(page==2)$('#title').attr('src','img/projects.gif');
-    if(page==3)$('#title').attr('src','img/demo.gif');
+    else if(page==1)$('#title').attr('src','img/resume.gif');
+    else if(page==2)$('#title').attr('src','img/projects.gif');
+    else $('#title').attr('src','img/demo.gif');
 }
 
 setInterval(draw, 100);
