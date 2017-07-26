@@ -2,7 +2,7 @@ function jump(page){
     changePage(page);
     if(page == 1){
         $('#resume').show();
-        $( '#iframe' ).attr( 'src','doc/resume.pdf');
+        $('#resume').attr('src','doc/resume.pdf');
     }
     else{
         $('#resume').hide();

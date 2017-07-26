@@ -57,17 +57,20 @@ function draw()
         drops[i]++;
     }
 
-    for(var i = 0; i < titles.length; i++)
-        alphas[i] = drawTxt(titles[i], c, flags[i], alphas[i],-0.1*c.width,0,1.2*c.width,0.8*c.height);
+    //for(var i = 0; i < titles.length; i++)
+      //  alphas[i] = drawTxt(titles[i], c, flags[i], alphas[i],-0.1*c.width,0,1.2*c.width,0.8*c.height);
 }
 
 function changePage(page)
 {
-    for(var i = 0; i < titles.length; i++){
+    /*for(var i = 0; i < titles.length; i++){
         flags[i]=false;
     }
-    currentPage = page;
-    flags[page] = true;
+    flags[page] = true;*/
+    if(page==0)$('#title').attr('src','img/welcome.gif');
+    if(page==1)$('#title').attr('src','img/resume.gif');
+    if(page==2)$('#title').attr('src','img/projects.gif');
+    if(page==3)$('#title').attr('src','img/demo.gif');
 }
 
 setInterval(draw, 100);
