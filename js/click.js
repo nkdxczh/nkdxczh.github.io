@@ -15,6 +15,7 @@ function jump(page){
     if(page == 3){
         $('#demo').show();
         $('#demo').attr('src','attack/index.html');
+        toTop($('#demo'));
     }else{
         $('#demo').hide();
     }
