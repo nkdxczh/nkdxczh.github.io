@@ -19,6 +19,13 @@ function jump(page){
     }else{
         $('#demo').hide();
     }
+    if(page == 4){
+        $('#note').show();
+        toTop($('#note'));
+        loadFS();
+    }else{
+        $('#note').hide();
+    }
 }
 
 function toTop(element){
