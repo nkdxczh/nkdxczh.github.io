@@ -13,7 +13,7 @@ var font_size = 15;
 var drops = [];
 var columns = c.width/font_size; //number of columns for the rain
 
-var titles = [indexTxt,resumeTxt,projectsTxt,demoTxt];
+//var titles = [indexTxt,resumeTxt,projectsTxt,demoTxt];
 var alphas = [0,0,0,0];
 var flags = [true,false,false,false];
 var ls=[-0.05*c.width,0,0,0];
