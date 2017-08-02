@@ -70,7 +70,8 @@ function changePage(page)
     if(page==0)$('#title').attr('src','img/welcome.gif');
     else if(page==1)$('#title').attr('src','img/resume.gif');
     else if(page==2)$('#title').attr('src','img/projects.gif');
-    else $('#title').attr('src','img/demo.gif');
+    else if(page==3)$('#title').attr('src','img/demo.gif');
+    else $('#title').attr('src','img/notes.gif');
 }
 
 setInterval(draw, 100);

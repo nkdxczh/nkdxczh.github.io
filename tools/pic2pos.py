@@ -1,7 +1,7 @@
 from PIL import Image
 
 out = open('out','w')
-im = Image.open("../img/demo.png").convert('LA')
+im = Image.open("../img/notes.png").convert('LA')
 pix = im.load()
 [w,h] = im.size
 result = ''

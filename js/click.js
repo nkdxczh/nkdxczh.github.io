@@ -26,6 +26,7 @@ function jump(page){
         $('#note').show();
         toTop($('#note'));
         loadFS();
+        resetForm(7);
     }else{
         $('#note').hide();
     }

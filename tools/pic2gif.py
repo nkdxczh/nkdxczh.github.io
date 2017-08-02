@@ -36,7 +36,7 @@ def generateGif(out, pics):
         images.append(imageio.imread(filename))
     imageio.mimsave(out, images,'GIF-FI', **kargs)
 
-names = ['welcome','resume','projects','demo']
+names = ['welcome','resume','projects','demo','notes']
 for name in names:
     inputF = '../img/'+name+'.png'
     outputF = 'tmp/'+name

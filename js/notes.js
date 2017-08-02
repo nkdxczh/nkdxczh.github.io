@@ -68,6 +68,7 @@ function FsVi(f, ele){
 }
 
 function buildFS(text){
+    root = new TreeNode('dir',null, null,null);
     var files = text.split('\n');
     for(var f = 0; f < files.length-1; f++){
         data = files[f].split(';');

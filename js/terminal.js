@@ -1,7 +1,7 @@
 var inputReady = true;
 var input = $('.404-input');
-var info = '<p class="prompt">----------BASIC INFORMATION----------</p><p class="prompt">NAME: ZHANHAO CHEN</p><p class="prompt">EMAIL: <a href="mailto:zhc416@lehigh.edu" style="text-decoration: none">zhc416@gmail.com</a></p><p class="prompt">GITHUB: <a href="https://github.com/nkdxczh" style="text-decoration: none">nkdxczh</a></p><p class="prompt">---------------COMMAND---------------</p>';
-var guide = '<p class="prompt">----------------GUIDE----------------</p><p class="prompt" onclick="jump(0)">HOMEPAGE</p><p class="prompt" onclick="jump(1)">RESUME</p><p class="prompt" onclick="jump(2)">PROJECTS</p><p class="prompt" onclick="jump(3)">TIME CHENNEL ATTACKS DEMO</p><p class="prompt">---------------COMMAND---------------</p>';
+var info = '<p class="prompt">----------BASIC INFORMATION----------</p><p class="prompt">NAME: ZHANHAO CHEN</p><p class="prompt">EMAIL: <a href="mailto:zhc416@lehigh.edu">zhc416@gmail.com</a></p><p class="prompt">GITHUB: <a href="https://github.com/nkdxczh">nkdxczh</a></p><p class="prompt">---------------COMMAND---------------</p>';
+var guide = '<p class="prompt">----------------GUIDE----------------</p><p class="prompt" onclick="jump(0)" style="text-decoration:underline;">HOMEPAGE</p><p class="prompt" onclick="jump(1)" style="text-decoration:underline;">RESUME</p><p class="prompt" onclick="jump(2)" style="text-decoration:underline;">PROJECTS</p><p class="prompt" onclick="jump(3)" style="text-decoration:underline;">TIME CHENNEL ATTACKS DEMO</p><p class="prompt" onclick="jump(4)" style="text-decoration:underline;">NOTES</p><p class="prompt">---------------COMMAND---------------</p>';
 input.focus();
 $('.container').on('click', function(e){
     input.focus();
@@ -47,6 +47,10 @@ $('.four-oh-four-form').on('submit', function(e){
     else if(val.slice(0,3) == 'vi ' && currentPage == 4){
         resetForm(6,val);
     }
+    else if(val == 'notes'){
+        jump(4);
+        resetForm(7);
+    }
     else {
         resetForm(0,val);
     }
@@ -74,6 +78,9 @@ function resetForm(found,m){
     else if(found == 6){
         message = FsVi(m.slice(3,m.length), document.getElementById('note'));
         toTop(document.getElementById('note'));
+    }
+    else if(found == 7){
+        message = "<p class='prompt'>You have entered notes file system. You could use ls, cd, vi(open file) commands.</p>"
     }
 
     $('.new-output').removeClass('new-output');
