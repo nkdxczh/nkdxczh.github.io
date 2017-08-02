@@ -1,4 +1,7 @@
+var currentPage = 1;
+
 function jump(page){
+    currentPage = page;
     changePage(page);
     if(page == 1){
         $('#resume').show();

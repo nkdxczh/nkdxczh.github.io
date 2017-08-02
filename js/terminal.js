@@ -38,6 +38,15 @@ $('.four-oh-four-form').on('submit', function(e){
     else if(val == 'guide'){
         resetForm(3);
     }
+    else if(val == 'ls' && currentPage == 4){
+        resetForm(4);
+    }
+    else if(val.slice(0,3) == 'cd ' && currentPage == 4){
+        resetForm(5,val);
+    }
+    else if(val.slice(0,3) == 'vi ' && currentPage == 4){
+        resetForm(6,val);
+    }
     else {
         resetForm(0,val);
     }
@@ -47,6 +56,8 @@ function resetForm(found,m){
     var message = '<p class="prompt">'+m+' command not found.</p>'
         var input = $('.404-input');
 
+    var append = true;
+
     if (found==1){
         message = "";
     }
@@ -54,11 +65,20 @@ function resetForm(found,m){
         message = info;
     else if(found == 3)
         message = guide;
+    else if(found == 4)
+        message = FsLs();
+    else if(found == 5){
+        if(!FsCd(m.slice(3,m.length)))message = '<p class="prompt">Not this directory</p>';
+        else message = '';
+    }
+    else if(found == 6){
+        message = FsVi(m.slice(3,m.length), document.getElementById('note'));
+        toTop(document.getElementById('note'));
+    }
 
     $('.new-output').removeClass('new-output');
     input.val('');
-    console.log(message);
-    $('#console').append(message + '<p class="prompt output new-output"></p>');
+    if(append)$('#console').append(message + '<p class="prompt output new-output"></p>');
 
     $('#console').animate({scrollTop: 1000*$('.terminal').height()}, 1000);
 
