@@ -1,0 +1,11 @@
+@font-face {
+	font-family: 'upheavtt';
+	src: url('./upheavtt.eot');
+	src: local('upheavtt'), url('./upheavtt.woff') format('woff'), url('./upheavtt.ttf') format('truetype');
+}
+/* use this class to attach this font to any element i.e. <p class="fontsforweb_fontid_869">Text with this font applied</p> */
+.fontsforweb_fontid_869 {
+	font-family: 'upheavtt' !important;
+}
+
+/* Font downloaded from FontsForWeb.com */

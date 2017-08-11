@@ -10,9 +10,7 @@ var root = new TreeNode('dir',null, null,null);
 var current = root;
 
 function add(node, path, file, url){
-    console.log(path);
     if(path.length == 0){
-        console.log(file);
         var newNode = new TreeNode('file', file, node, url);
         node.children.push(newNode);
     }else{
@@ -39,7 +37,6 @@ function FsCd(path){
         return true;
     }
     for(var i = 0; i < current.children.length; i++){
-        console.log(':'+current.children[i].name+':', ':'+path+':', current.children[i].type);
         if(current.children[i].name == path && current.children[i].type == 'dir'){
             current = current.children[i];
             return true;
@@ -51,20 +48,26 @@ function FsCd(path){
 function FsLs(){
     var result = '<p class="prompt">';
     for(var i = 0; i < current.children.length; i++){
-        result += current.children[i].name + ' ';
+        if(current.children[i].type == 'file')
+            result += "<a onclic='console.log(click: "+current.children[i].name+")'>"+current.children[i].name + '</a> ';
+        else
+            result += current.children[i].name + ' ';
     }
     return result + '</p>';
 }
 
 function FsVi(f, ele){
     for(var i = 0; i < current.children.length; i++){
-        console.log(current.children[i].name, f, current.children[i].type);
         if(current.children[i].name == f && current.children[i].type == 'file'){
             ele.src = current.children[i].url;
             return '<p class="prompt">Open file</p>';
         }
     }
     return '<p class="prompt">No this file</p>';
+}
+
+function FsTree(){
+
 }
 
 function buildFS(text){

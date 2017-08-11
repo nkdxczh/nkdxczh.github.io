@@ -60,8 +60,6 @@ function resetForm(found,m){
     var message = '<p class="prompt">'+m+' command not found.</p>'
         var input = $('.404-input');
 
-    var append = true;
-
     if (found==1){
         message = "";
     }
@@ -85,13 +83,13 @@ function resetForm(found,m){
 
     $('.new-output').removeClass('new-output');
     input.val('');
-    if(append)$('#console').append(message + '<p class="prompt output new-output"></p>');
+    $('#console').append(message + '<p class="prompt output new-output"></p>');
 
     $('#console').animate({scrollTop: 1000*$('.terminal').height()}, 1000);
 
-    $('.new-output').velocity(
+    /*$('.new-output').velocity(
             'scroll'
-            ), {duration: 100}
+            ), {duration: 100}*/
 }
 
 function textEffect(line){

@@ -1,0 +1,39 @@
+* {margin: 0; padding: 0;}
+
+div.background {
+  height: 1000;
+  width: 100%;
+  background-color: rgb(255,255,255);
+}
+
+div.title {
+  font-size:60px;
+  font-color:red;
+}
+
+div.terminal {
+  z-index:2; 
+  position:absolute;
+  color:green;
+  border-radius: 5px;
+  border: 1px solid rgba(100,100,100,1);
+  font-size:20px;
+  background-color: rgba(0,0,0,1);
+  border: 5;
+  border-radius: 2;
+  width: 700px;
+  height: 450px;
+  overflow:scroll;
+}
+
+div.container{
+  z-index:2;
+  position:absolute;
+  top: 75%;
+  left: 33%;
+  width: 600px;
+  height: 400px
+}
+
+iframe.content{
+}

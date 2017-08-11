@@ -3,58 +3,15 @@
     <meta charset='UTF-8'/>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/terminal.css">
-    <style>
-* {margin: 0; padding: 0;}
-
-div.background {
-  height: 1000;
-  width: 100%;
-  background-color: rgb(255,255,255);
-}
-
-div.title {
-  font-size:60px;
-  font-color:red;
-}
-
-div.terminal {
-  z-index:2; 
-  position:absolute;
-  color:green;
-  border-radius: 5px;
-  border: 1px solid rgba(100,100,100,1);
-  font-size:20px;
-  background-color: rgba(0,0,0,1);
-  border: 5;
-  border-radius: 2;
-  width: 700px;
-  height: 450px;
-  overflow:scroll;
-}
-
-div.container{
-  z-index:2;
-  position:absolute;
-  top: 50%;
-  left: 10%;
-  width: 600px;
-  height: 400px
-}
-
-iframe.content{
-}
-    </style>
-    <title>
-      Zhanhao's Website
-    </title>
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/basic.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script>
 $( function() {
   $( "#draggable" ).draggable();
 } );
-    </script>
-    <script>
+
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -64,6 +21,9 @@ ga('create', 'UA-103022271-1', 'auto');
 ga('send', 'pageview');
 
     </script>
+    <title>
+      Zhanhao's Website
+    </title>
   </head>
 
   <body>
@@ -95,8 +55,8 @@ ga('send', 'pageview');
 
     </div>
     <img id='title' src ='img/welcome.gif' style='position:absolute; top:0%; left:0; width:100%; height:30%'></img>
-    <img id='clock-title' src ='img/clock.gif' style='position:absolute; top:40%; left:0; width:100%; height:20%'></img>
-    <div id="day" align="center" style="font-size:80px; font-family: 'Times New Roman', Georgia, Serif; position:absolute; top:60%; left:0%; width:100%; color:green; z-index:1"></div>
+    <div id="clock-title" align="center" style="font-size:100px; font-family: 'upheavtt'; position:absolute; top:40%; left:0%; width:100%; color:green; z-index:1">LIFE CLOCK</div>
+    <div id="day" align="center" style="font-size:80px; font-family: 'upheavtt'; position:absolute; top:60%; left:0%; width:100%; color:green; z-index:1"></div>
 
     <iframe id="resume" class="content" onload="iframeclick(this)" src="doc/resume.pdf" style="position:absolute; top:35%; left:15%; width:70%; height:1200px; display:none;" frameborder="0"></iframe>
     <div id="projects" class="terminal" onclick="toTop(this)" style="font-size: 25; opacity: 0.8; z-index:1; position:absolute; top:35%; left:15%; width:70%; height:1100px; display:none; border-radius: 10px;" frameborder="0">
