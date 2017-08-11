@@ -30,7 +30,7 @@ ga('send', 'pageview');
     <div class="background" height='1500'>
       <canvas id='backcanvas' height='1500' style="z-index:1">
       </canvas>
-      <button onclick="toTop($('#cosole'));" style="z-index:5; position:absolute; top:0; left:0; border:0; color:green; background-color:rgba(0,0,0,0);">Move Console to Top</button>
+      <button class='nav' onclick="toTop($('#cosole'));">Move Console to Top</button>
       <div id="draggable" class="ui-widget-content container">
         <form class="four-oh-four-form">
           <input type="text" class="404-input">
@@ -54,12 +54,12 @@ ga('send', 'pageview');
       </div>
 
     </div>
-    <img id='title' src ='img/welcome.gif' style='position:absolute; top:0%; left:0; width:100%; height:30%'></img>
-    <div id="clock-title" align="center" style="font-size:100px; font-family: 'upheavtt'; position:absolute; top:40%; left:0%; width:100%; color:green; z-index:1">LIFE CLOCK</div>
-    <div id="day" align="center" style="font-size:80px; font-family: 'upheavtt'; position:absolute; top:60%; left:0%; width:100%; color:green; z-index:1"></div>
+    <img id='title' src ='img/welcome.gif'></img>
+    <div id="clock-title" align="center">LIFE CLOCK</div>
+    <div id="clock" align="center"></div>
 
-    <iframe id="resume" class="content" onload="iframeclick(this)" src="doc/resume.pdf" style="position:absolute; top:35%; left:15%; width:70%; height:1200px; display:none;" frameborder="0"></iframe>
-    <div id="projects" class="terminal" onclick="toTop(this)" style="font-size: 25; opacity: 0.8; z-index:1; position:absolute; top:35%; left:15%; width:70%; height:1100px; display:none; border-radius: 10px;" frameborder="0">
+    <iframe id="resume" class="content" onload="iframeclick(this)" src="doc/resume.pdf" frameborder="0"></iframe>
+    <div id="projects" class="terminal" onclick="toTop(this)" frameborder="0">
       <p class="prompt">---------------DETERFOX---------------</p>
       <p class="prompt">TIME: Oct. 2016 – Present</p>
       <p class="prompt">LOCATION: seclab, Lehigh University</p>
@@ -83,8 +83,8 @@ ga('send', 'pageview');
       <p class="prompt">PAPER: <a href='http://www.atlantis-press.com/php/pub.php?publication=icmmct-16&frame=http%3A//www.atlantis-press.com/php/paper-details.php%3Ffrom%3Dauthor+index%26id%3D25849934%26querystr%3Dauthorstr%253DZ'>Feature Evaluation in Fine-gain of Leaf</a></p>
 
     </div>
-    <iframe id="demo" class="content" onclick="toTop(this)" style="position:absolute; top:33%; left:20%; width: 60%; height:1000px; display:none;background-color: rgba(255,255,255,0.5);" frameborder="0"></iframe>
-    <iframe id="note" class="content" onclick="toTop(this)" style="position:absolute; top:33%; left:20%; width: 60%; height:1000px; display:none;background-color: rgba(255,255,255,0.5);" frameborder="0"></iframe>
+    <iframe id="demo" class="content" onclick="toTop(this)" frameborder="0"></iframe>
+    <iframe id="note" class="content" onclick="toTop(this)" frameborder="0"></iframe>
   </body>
 
   <script src='js/notes.js'></script>

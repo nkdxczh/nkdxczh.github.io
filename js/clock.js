@@ -17,7 +17,7 @@ function refreshTime(){
     last -= min*(60);
     sec = Math.floor(last);
 
-    document.getElementById("day").innerHTML = year+" Years ,"+day+" Days, "+hour+' Hours, '+min+' Min, '+sec+' Sec';
+    document.getElementById("clock").innerHTML = year+" Years ,"+day+" Days, "+hour+' Hours, '+min+' Min, '+sec+' Sec';
 }
 
 setInterval(refreshTime, 1000);
