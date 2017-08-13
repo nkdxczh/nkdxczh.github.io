@@ -4,7 +4,7 @@ var gl;
 var cubeVerticesBuffer;
 var cubeVerticesColorBuffer;
 var cubeVerticesIndexBuffer;
-var cubeRotation = 0.0;
+var cubeRotation = 45.0;
 var cubeXOffset = 0.0;
 var cubeYOffset = 0.0;
 var cubeZOffset = 0.0;
@@ -155,11 +155,11 @@ function initBuffers() {
   var generatedColors = [];
 
   for (j=0; j<6; j++) {
-    var c = colors[j];
 
     // Repeat each color four times for the four vertices of the face
 
     for (var i=0; i<4; i++) {
+      var c = colors[(i+j)%6];
       generatedColors = generatedColors.concat(c);
     }
   }
@@ -223,7 +223,7 @@ function drawScene() {
   // Save the current matrix, then rotate before we draw.
 
   mvPushMatrix();
-  mvRotate(cubeRotation, [1, 0, 1]);
+  mvRotate(cubeRotation, [1, 1, 1]);
   mvTranslate([cubeXOffset, cubeYOffset, cubeZOffset]);
 
   // Draw the cube by binding the array buffer to the cube's vertices
@@ -249,7 +249,7 @@ function drawScene() {
 
   // Update the rotation for the next draw, if it's time to do so.
 
-  var currentTime = (new Date).getTime();
+  /*var currentTime = (new Date).getTime();
   if (lastCubeUpdateTime) {
     var delta = currentTime - lastCubeUpdateTime;
 
@@ -265,7 +265,7 @@ function drawScene() {
     }
   }
 
-  lastCubeUpdateTime = currentTime;
+  lastCubeUpdateTime = currentTime;*/
 }
 
 //

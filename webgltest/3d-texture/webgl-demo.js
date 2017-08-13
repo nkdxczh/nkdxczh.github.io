@@ -4,7 +4,7 @@ var gl;
 var cubeVerticesBuffer;
 var cubeVerticesTextureCoordBuffer;
 var cubeVerticesIndexBuffer;
-var cubeRotation = 0.0;
+var cubeRotation = 45.0;
 var lastCubeUpdateTime = 0;
 
 var cubeImage;
@@ -260,7 +260,7 @@ function drawScene() {
   // Save the current matrix, then rotate before we draw.
 
   mvPushMatrix();
-  mvRotate(cubeRotation, [1, 0, 1]);
+  mvRotate(cubeRotation, [1, 1, 1]);
 
   // Draw the cube by binding the array buffer to the cube's vertices
   // array, setting attributes, and pushing it to GL.
@@ -291,14 +291,14 @@ function drawScene() {
 
   // Update the rotation for the next draw, if it's time to do so.
 
-  var currentTime = (new Date).getTime();
+  /*var currentTime = (new Date).getTime();
   if (lastCubeUpdateTime) {
     var delta = currentTime - lastCubeUpdateTime;
 
     cubeRotation += (30 * delta) / 1000.0;
   }
 
-  lastCubeUpdateTime = currentTime;
+  lastCubeUpdateTime = currentTime;*/
 }
 
 //
