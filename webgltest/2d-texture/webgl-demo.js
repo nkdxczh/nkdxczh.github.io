@@ -41,6 +41,8 @@ function start() {
 
         initBuffers();
 
+        initTextures();
+
         // Set up to draw the scene periodically.
 
         setInterval(drawScene, 15);
@@ -104,7 +106,7 @@ function initBuffers() {
 
     // Now set up the colors for the vertices
 
-    var colors = [
+    /*var colors = [
         1.0,  1.0,  1.0,  1.0,    // white
         1.0,  0.0,  0.0,  1.0,    // red
         0.0,  1.0,  0.0,  1.0,    // green
@@ -113,7 +115,7 @@ function initBuffers() {
 
     squareVerticesColorBuffer = gl.createBuffer();
     gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesColorBuffer);
-    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+    gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);*/
 
     var textureCoordinates = [
         0.0,  0.0,
@@ -132,7 +134,7 @@ function initTextures() {
     cubeTexture = gl.createTexture();
     cubeImage = new Image();
     cubeImage.onload = function() { handleTextureLoaded(cubeImage, cubeTexture); }
-    cubeImage.src = "http://zhanhao.org/img/21.png";
+    cubeImage.src = "../21.png";
 }
 
 function handleTextureLoaded(image, texture) {

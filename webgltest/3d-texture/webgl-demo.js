@@ -216,7 +216,7 @@ function initTextures() {
   cubeTexture = gl.createTexture();
   cubeImage = new Image();
   cubeImage.onload = function() { handleTextureLoaded(cubeImage, cubeTexture); }
-  cubeImage.src = "http://zhanhao.org/img/21.png";
+  cubeImage.src = "../21.png";
 }
 
 function handleTextureLoaded(image, texture) {
