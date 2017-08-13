@@ -87,7 +87,6 @@ function resetForm(found,m){
 
     $('.new-output').removeClass('new-output');
     input.val('');
-    console.log(message);
     $('#console').append(message + '<p class="prompt output new-output"></p>');
 
     $('#console').animate({scrollTop: 1000*$('.terminal').height()}, 1000);
