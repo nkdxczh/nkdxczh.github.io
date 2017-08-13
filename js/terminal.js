@@ -49,7 +49,9 @@ $('.four-oh-four-form').on('submit', function(e){
     }
     else if(val == 'notes'){
         jump(4);
-        resetForm(7);
+    }
+    else if(val == 'tree' && currentPage == 4){
+        resetForm(8);
     }
     else {
         resetForm(0,val);
@@ -78,11 +80,14 @@ function resetForm(found,m){
         toTop(document.getElementById('note'));
     }
     else if(found == 7){
-        message = "<p class='prompt'>You have entered notes file system. You could use ls, cd, vi(open file) commands.</p>"
+        message = "<p class='prompt'>You have entered notes file system. You could use ls, cd, vi [filename](open file), tree(print directory structure) commands.</p>";
     }
+    else if(found == 8)
+        message = FsTree();
 
     $('.new-output').removeClass('new-output');
     input.val('');
+    console.log(message);
     $('#console').append(message + '<p class="prompt output new-output"></p>');
 
     $('#console').animate({scrollTop: 1000*$('.terminal').height()}, 1000);

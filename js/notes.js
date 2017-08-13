@@ -49,11 +49,12 @@ function FsLs(){
     var result = '<p class="prompt">';
     for(var i = 0; i < current.children.length; i++){
         if(current.children[i].type == 'file')
-            result += "<a onclic='console.log(click: "+current.children[i].name+")'>"+current.children[i].name + '</a> ';
+            result += "<a class='link' onclick=\"resetForm(6,\'vi "+current.children[i].name+"\')\">"+current.children[i].name + '</a> | ';
         else
-            result += current.children[i].name + ' ';
+            result += current.children[i].name + ' | ';
     }
-    return result + '</p>';
+    if(result =='<p class="prompt">')return '<p class="prompt"></p>';
+    return result.slice(0,result.length-3) + '</p>';
 }
 
 function FsVi(f, ele){
@@ -66,8 +67,17 @@ function FsVi(f, ele){
     return '<p class="prompt">No this file</p>';
 }
 
-function FsTree(){
-
+function FsTree(node = current, tabs = "|-"){
+    result = ""; 
+    for(var i = 0; i < node.children.length; i++){
+        if(node.children[i].type == 'file'){
+            result += "<p class=\"prompt\">"+tabs+"<a class='link' hrefi="+node.children[i].url+" onclick=\"resetForm(6,\'vi "+node.children[i].name+"\')\">"+node.children[i].name + '</a></p>';
+        }else{
+            result += "<p class=\"prompt\">"+tabs+node.children[i].name+'</p>';
+            result += FsTree(node.children[i], '  '+tabs);
+        }
+    }
+    return result;
 }
 
 function buildFS(text){
