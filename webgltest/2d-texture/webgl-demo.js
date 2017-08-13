@@ -183,6 +183,9 @@ function drawScene() {
     //gl.bindBuffer(gl.ARRAY_BUFFER, squareVerticesColorBuffer);
     //gl.vertexAttribPointer(vertexColorAttribute, 4, gl.FLOAT, false, 0, 0);
 
+    gl.bindBuffer(gl.ARRAY_BUFFER, cubeVerticesTextureCoordBuffer);
+    gl.vertexAttribPointer(textureCoordAttribute, 2, gl.FLOAT, false, 0, 0);
+
     gl.activeTexture(gl.TEXTURE0);
     gl.bindTexture(gl.TEXTURE_2D, cubeTexture);
     gl.uniform1i(gl.getUniformLocation(shaderProgram, "uSampler"), 0);
