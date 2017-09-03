@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>math.js | plot</title>
+     <meta charset="UTF-8"> 
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/mathjs/3.16.3/math.min.js"></script>
+
+    <!-- load http://maurizzzio.github.io/function-plot/ -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="https://wzrd.in/standalone/function-plot@1.14.0"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <style>
+input[type=text] {
+  width: 300px;
+}
+        input {
+          padding: 6px;
+        }
+        body, html, input {
+          font-family: sans-serif;
+          font-size: 11pt;
+
+        }
+        form {
+          margin: 20px 0;
+        }
+    </style>
+  </head>
+  <body>
+
+    <span>first year interest rate:</span>
+    <span id="alpha"></span>
+    <p>
+      <span>reinvestment rate - compounding rate = <span>
+      <span id="eq"><span>
+    </p>
+
+      <span> (x represent the changing rate of interest rate)<span>
+    <br>
+    <input type="range" value="0.5" min="0" max="1.0" step="0.01" onchange="change(this.value)">
+
+    <div id="plot"></div>
+
+    <script>
+function change(value){
+  console.log(value);
+  $("#alpha").html(value);
+  mydraw(value);
+  $('#eq').html("(x^3-1)*"+Math.pow(value,3)+"+(x^2+2x-3)*"+Math.pow(value,2)+"+"+value);
+}
+
+function mydraw(alpha){
+  Math.pow(alpha,3);
+  try{
+    functionPlot({
+      target: '#plot',
+      data: [{
+        fn: "(x^3-1)*"+Math.pow(alpha,3)+"+(x^2+2x-3)*"+Math.pow(alpha,2)+"+"+alpha,
+        sampler: 'builtIn',
+        graphType: 'polyline'
+      }]
+    })
+  }
+  catch(err){
+    coonsole.log(err);
+  }
+}
+
+change(0.5);
+
+function draw() {
+  try {
+    functionPlot({
+      target: '#plot',
+      data: [{
+        fn: document.getElementById('eq').value,
+        sampler: 'builtIn',  // this will make function-plot use the evaluator of math.js
+        graphType: 'polyline'
+      }]
+    });
+  }
+  catch (err) {
+    console.log(err);
+    alert(err);
+  }
+}
+
+    </script>
+
+  </body>
+</html>
