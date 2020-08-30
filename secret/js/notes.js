@@ -95,7 +95,7 @@ function buildFS(text){
 
 function loadFS(){
     var rawFile = new XMLHttpRequest();
-    rawFile.open("GET", "http://zhanhao.org/doc/notes", true);
+    rawFile.open("GET", "https://zhanhao.org/doc/notes", true);
     rawFile.onreadystatechange = function ()
     {
         if(rawFile.readyState === 4)
